@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"
+        integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+    <title>barcode</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>services</li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <input type="text" value="neerajrekwar" name="txt_input" id="txt_input">
+        <button id="btn_generate">Generate barcode</button>
+        <br><br>
+        <svg id="barcode"></svg>
+
+        <script type="text/javascript">
+            document.getElementById("btn_generate").addEventListener('click', function () {
+                var text = document.getElementById("txt_input").value;
+
+                JsBarcode("#barcode", text, {
+                    lineColor: "#0aa",
+                    width: 2,
+                    height: 20,
+                    displayValue: true
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
