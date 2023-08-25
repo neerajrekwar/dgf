@@ -30,3 +30,32 @@ function checkTime(i) {
   if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
   return i;
 }
+
+
+// ran pass
+
+function generatePassword(length) {
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset[randomIndex];
+  }
+
+  return password;
+}
+
+const generateButton = document.getElementById("generateButton");
+const passwordLengthInput = document.getElementById("passwordLength");
+const generatedPassword = document.getElementById("generatedPassword");
+
+generateButton.addEventListener("click", function() {
+  const length = parseInt(passwordLengthInput.value);
+  if (!isNaN(length) && length > 0) {
+    const newPassword = generatePassword(length);
+    generatedPassword.textContent = "Generated Password: " + newPassword;
+  } else {
+    generatedPassword.textContent = "Please enter a valid password length.";
+  }
+});

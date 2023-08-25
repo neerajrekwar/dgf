@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script  src="script.js"></script>
-  <title>Random Password Generater</title>
+  <scrip src="script.js"></scrip>
+  <link rel="stylesheet" href="style.css">
+  <title>Random Password Generator</title>
 </head>
 
 <body>
-  <div class="body">
-<div id="demo"></div>
+  <main>
+    <!-- normal pass gen  -->
+    <input type="range" step="2" min="8" max="64" id="passwordLength">
+    <button id="generateButton">Generate Password</button>
+    <p id="generatedPassword"></p>
+    <button id="copyButton" style="display: none;">Copy Password</button>
 
+    <script>
+      function generatePassword(length) {
+        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+        let password = "";
+
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * charset.length);
+          password += charset[randomIndex];
+        }
+
+        return password;
+      }
+
+      const generateButton = document.getElementById("generateButton");
+      const passwordLengthInput = document.getElementById("passwordLength");
+      const generatedPassword = document.getElementById("generatedPassword");
+      const copyButton = document.getElementById("copyButton");
+
+      generateButton.addEventListener("click", function () {
+        const length = parseInt(passwordLengthInput.value);
+        if (!isNaN(length) && length > 0) {
+          const newPassword = generatePassword(length);
+          generatedPassword.textContent = "Generated cool Password: " + newPassword;
+          copyButton.style.display = "block";
+          copyButton.dataset.clipboardText = newPassword;
+        } else {
+          generatedPassword.textContent = "Please enter a valid password length.";
+          copyButton.style.display = "none";
+        }
+      });
+
+      copyButton.addEventListener("click", function () {
+        const textToCopy = copyButton.dataset.clipboardText;
+        const tempTextArea = document.createElement("textarea");
+        tempTextArea.value = textToCopy;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+        copyButton.textContent = "Copied!";
+        setTimeout(function () {
+          copyButton.textContent = "Copy Password";
+        }, 1000); // Reset button text after 1 second
+      });
+    </script>
+    <!-- Dynamic pass gen -->
+    <!-- 
+    <div class="pbx">
+      <div class="psbx">
+        <h2>Password Generator</h2>
+        <h3 id="output">output</h3>
+        <div class="opbx">
+        <label class="checkbx">langth<input type="checkbox" name="" id="lgth" class="length"></label>
+        <label class="checkbx">number<input type="checkbox" name="" id="number"></label>
+        <label class="checkbx">symbal<input type="checkbox" name="" id="symbal"></label>
+        <label class="checkbx">char<input type="checkbox" name="" id="char"></label>
+        </div>
+      </div>
+      <div class="psbx box">
+        <span class="gen-bx">
+          <button type="submit">Generate</button>
+        </span>
+        <span class="copy-bx">
+          <button type="submit">Copy</button>
+        </span>
+      </div>
+    </div>
+ -->
+  </main>
 </body>
 
 </html>

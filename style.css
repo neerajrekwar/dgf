@@ -2,115 +2,101 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Alata", sans-serif;
-  color: #000;
-  background-color: #ece9e9;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  min-height: 100vh;
+  /* font-family: "Alata", sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;  
 }
 @import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 
 body {
+  text-align: center;
+}
+main{
+  height: 100vh;
   margin: 0 auto;
-  height: 100vh;
-  max-width: 50%;
-  display: grid;
-  
-  place-content: center;
-  text-align: center;
-  color: #000;
-}
-body, a{
-  text-decoration: none;
-}
-h2{
-  margin-bottom: 30px;
-  text-align: center;
-}
-#txt{
-  font-size: 2.6em;
-}
-#qrcode {
-  color: aquamarine;
-  inset: 10px;
-}
-.scr-div {
+  max-width: 60%;
   display: flex;
-  place-content: center;
-  height: 100vh;
-  text-align: center;
-}
-#screen-fit {
-  position: absolute;
-  text-align: center;
-}
-
-.btn  {
-  margin: 20px;
-}
-
-
-/* ran pass start */
-.box {
-  background-color: white;
-  padding-top: 30px;
-  padding: 30px;
-
-}
-
-.box h2 {
-  margin-bottom: 40px;
-  text-align: center;
-  font-size: 26px;
-  color: #015a96;
-  font-family: sans-serif;
-}
-
-input {
-  padding: 20px;
-  user-select: none;
-  height: 50px;
-  width: 400px;
-  border-radius: 6px;
-  border: none;
-  border: 2px solid rgb(13, 152, 245);
-  outline: none;
-  font-size: 22px;
-}
-
-input::placeholder {
-  font-size: 23px;
-}
-
-#button {
-  font-family: sans-serif;
-  font-size: 15px;
-
-  margin-top: 40px;
-  border: 2px solid rgb(20, 139, 250);
-  width: 155px;
-  height: 50px;
-  text-align: center;
-  background-color: #0c81ee;
-  display: flex;
-  color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center;
+  /* border: 2px solid tomato; */
+  
+}
+/* ran pass start */
+.btn{
+  height: 2.7em;
+  padding: 10px;
+  width: auto;
+  border: none;
+}
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
   cursor: pointer;
-  border-radius: 7px;
-
-
+  width: 25rem;
 }
 
-.btn2 {
-  margin-left: 85px
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
 }
 
-#button:hover {
-  color: rgb(0, 0, 0);
-  background-color: black;
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #add8e6;
+  border-radius: 0.5rem;
+  height: 0.5rem;
 }
 
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -4px; /* Centers thumb on the track */
+  background-color: #808080;
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid #808080;
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #add8e6;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: #808080;
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb{
+  outline: 3px solid #808080;
+  outline-offset: 0.125rem;
+}
+.passbx{
+  border: 2px solid tomato;
+  
+}
+
+.output{
+  width: 100%;
+  padding: 20px 20px 0;
+  border: 2px solid green;
+  text-align: center;
+}
 /* ran pass end */
