@@ -4,18 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
   <scrip src="script.js"></scrip>
   <link rel="stylesheet" href="style.css">
   <title>Random Password Generator</title>
 </head>
 
 <body>
-  <main>
+  <main class="pbx">
     <!-- normal pass gen  -->
-    <input type="range" step="2" min="8" max="64" id="passwordLength">
-    <button id="generateButton">Generate Password</button>
+    <input type="number" step="5" min="6" max="64" value="8" id="passwordLength">
+    <button  class="btn" " id="generateButton">Generate Password</button>
     <p id="generatedPassword"></p>
-    <button id="copyButton" style="display: none;">Copy Password</button>
+    <button class="btn" id="copyButton" style="display: none;">Copy Password</button>
 
     <script>
       function generatePassword(length) {

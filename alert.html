@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js">
+        const buttonA = document.querySelector("#button_A");
+        const headingA = document.querySelector("#heading_A");
+
+        buttonA.onclick = () => {
+            const name = prompt("What is your name?");
+            alert(`Hello ${name}, nice to see you!`);
+            headingA.textContent = `Welcome ${name}`;
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>alert</title>
+</head>
+
+<body>
+    <div>
+        <button id="button_A">press me</button>
+        <h3 id="heading_A"></h3>
+    </div>
+
+</body>
+<script type="text/javascript" src="script.js">
+
+    const buttonA = document.querySelector("#button_A");
+    const headingA = document.querySelector("#heading_A");
+
+    buttonA.onclick = () => {
+        const name = prompt("What is your name?");
+        alert(`Hello ${name}, nice to see you!`);
+        headingA.textContent = `Welcome ${name}`;
+    };
+
+</script>
+
+</html>

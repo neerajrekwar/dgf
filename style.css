@@ -1,23 +1,26 @@
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 10px;
   padding: 0;
-  /* font-family: "Alata", sans-serif; */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Alata", sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
   font-size: 16px;  
 }
 @import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 
 body {
-  text-align: center;
-}
-main{
-  height: 100vh;
-  margin: 0 auto;
-  max-width: 60%;
   display: flex;
-  justify-content: center;
+align-items: center;
+justify-items: center;
+justify-content: center;
+height: 100vh;
+}
+main {
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
   align-items: center;
+  justify-items: center;
   /* border: 2px solid tomato; */
   
 }
@@ -27,6 +30,16 @@ main{
   padding: 10px;
   width: auto;
   border: none;
+}
+
+#generatedPassword{
+  height: 2.7em;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #404040;
+  font-size: larger;
 }
 
 /*********** Baseline, reset styles ***********/
@@ -88,9 +101,10 @@ input[type="range"]:focus::-moz-range-thumb{
   outline: 3px solid #808080;
   outline-offset: 0.125rem;
 }
-.passbx{
+.pbx{
   border: 2px solid tomato;
-  
+  display: block;
+  height: auto;
 }
 
 .output{

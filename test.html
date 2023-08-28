@@ -1,58 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Password Generator with Copy Button</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="index.js"></script>
+    <title>Document</title>
+  </head>
 </head>
+
 <body>
-  <input type="number" id="passwordLength" placeholder="Enter password length">
-  <button id="generateButton">Generate Password</button>
-  <p id="generatedPassword"></p>
-  <button id="copyButton" style="display: none;">Copy Password</button>
+  <main>
+    <div>
+      <iframe width="560" height="280"
+        src="https://www.bandlab.com/embed/shout/?id=be53fa110a704135a3744da1c01a52be_986d504947c1eb11a7ad0050f280467f"
+        frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div>
+      <button id="button_A">Rcognize yourself</button>
+      <h3 id="heading_A"></h3>
+    </div>
+    
+  </main>
 
-  <script>
-    function generatePassword(length) {
-      const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
-      let password = "";
-
-      for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * charset.length);
-        password += charset[randomIndex];
-      }
-
-      return password;
-    }
-
-    const generateButton = document.getElementById("generateButton");
-    const passwordLengthInput = document.getElementById("passwordLength");
-    const generatedPassword = document.getElementById("generatedPassword");
-    const copyButton = document.getElementById("copyButton");
-
-    generateButton.addEventListener("click", function() {
-      const length = parseInt(passwordLengthInput.value);
-      if (!isNaN(length) && length > 0) {
-        const newPassword = generatePassword(length);
-        generatedPassword.textContent = "Generated cool Password: " + newPassword;
-        copyButton.style.display = "block";
-        copyButton.dataset.clipboardText = newPassword;
-      } else {
-        generatedPassword.textContent = "Please enter a valid password length.";
-        copyButton.style.display = "none";
-      }
-    });
-
-    copyButton.addEventListener("click", function() {
-      const textToCopy = copyButton.dataset.clipboardText;
-      const tempTextArea = document.createElement("textarea");
-      tempTextArea.value = textToCopy;
-      document.body.appendChild(tempTextArea);
-      tempTextArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(tempTextArea);
-      copyButton.textContent = "Copied!";
-      setTimeout(function() {
-        copyButton.textContent = "Copy Password";
-      }, 1000); // Reset button text after 1 second
-    });
-  </script>
 </body>
+
 </html>

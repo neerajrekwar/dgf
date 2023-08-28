@@ -59,3 +59,15 @@ generateButton.addEventListener("click", function() {
     generatedPassword.textContent = "Please enter a valid password length.";
   }
 });
+
+
+// test
+
+const buttonA = document.querySelector("#button_A");
+const headingA = document.querySelector("#heading_A");
+
+buttonA.onclick = () => {
+  const name = prompt("What is your name?");
+  alert(`Hello ${name}, nice to see you!`);
+  headingA.textContent = `Welcome ${name}`;
+};
